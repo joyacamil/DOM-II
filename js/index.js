@@ -12,9 +12,15 @@ const buttons = document.querySelectorAll('.btn');
 const footer = document.querySelector('.footer');
 
 const middleImg = document.querySelector('.intro img');
+
 //offline
-window.addEventListener('offline', (event) => {
+window.addEventListener('offline', (e) => {
   alert("Looks like you lost network connection. Please reconnect to proceed. HURRY!");
+});
+
+// `online`
+window.addEventListener('online',(e) => {
+  alert('Glad to see you back! You may continue.')
 });
 
 // `resize`
@@ -31,10 +37,10 @@ container.addEventListener('keydown', (e) => e.target.style.background = 'lightr
 
 // `wheel`
 //example 
-function zoom(event) {
-  event.preventDefault();
+function zoom(e) {
+  e.preventDefault();
 
-  scale += event.deltaY * -0.01;
+  scale += e.deltaY * -0.01;
 
   // Restrict scale
   scale = Math.min(Math.max(.125, scale), 4);
@@ -47,8 +53,6 @@ let scale = 1;
 
 middleImg.onwheel = zoom;
 middleImg.addEventListener('onWheel', zoom)
-
-// `load`
 
 // `focus`
 
