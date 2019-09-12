@@ -55,12 +55,16 @@ middleImg.onwheel = zoom;
 middleImg.addEventListener('onWheel', zoom)
 
 //click
-navItems.forEach(item => {
+navBar.addEventListener('click', (e) => {
+  e.preventDefault();
+});
+    
+navItems.forEach(item => { 
   item.addEventListener('click',() => {
-    item.style.backgroundColor = 'yellow';
-    item.style.padding = '10px 15px';
-    item.style.color = 'purple';
-  })});
+  item.style.backgroundColor = 'yellow';
+  item.style.padding = '10px 15px';
+  item.style.color = 'purple';
+})});
 
 //select
 paragraphs.forEach(paragraphs => {
