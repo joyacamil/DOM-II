@@ -27,7 +27,7 @@ window.addEventListener('online',(e) => {
 window.addEventListener('resize', () => console.log('Resized.'));
 
 // `scroll`
-window.addEventListener('scroll',(e) => console.log(e));
+window.addEventListener('scroll',(e) => console.log(e.target));
 
 // `mouseover`
 busImg.addEventListener('mouseover', () => busImg.style.margin = '60px 0 60px 0');
@@ -54,13 +54,20 @@ let scale = 1;
 middleImg.onwheel = zoom;
 middleImg.addEventListener('onWheel', zoom)
 
-// `focus`
+//click
+navItems.forEach(item => {
+  item.addEventListener('click',() => {
+    item.style.backgroundColor = 'yellow';
+    item.style.padding = '10px 15px';
+    item.style.color = 'purple';
+  })});
 
-
-// `select`
+//select
+paragraphs.forEach(paragraphs => {
+  paragraphs.addEventListener('select',(e) => paragraphs.textContent = 'e.target')
+});
 
 // `dblclick`
-buttons.addEventListener;
 buttons.forEach(btn => {
   btn.addEventListener('dblclick',() => btn.style.backgroundColor = 'red')
 });
