@@ -16,11 +16,13 @@ const middleImg = document.querySelector('.intro img');
 //offline
 window.addEventListener('offline', (e) => {
   alert("Looks like you lost network connection. Please reconnect to proceed. HURRY!");
+  e.stopPropagation();
 });
 
 // `online`
 window.addEventListener('online',(e) => {
   alert('Glad to see you back! You may continue.')
+  e.stopPropagation();
 });
 
 // `resize`
